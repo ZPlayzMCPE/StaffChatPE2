@@ -160,4 +160,3 @@ class Commands extends PluginBase implements CommandExecutor{
     				}
     			}
             }
-return true;
