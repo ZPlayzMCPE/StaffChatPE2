@@ -92,7 +92,7 @@ class Commands extends PluginBase implements CommandExecutor{
     						if($sender->hasPermission("staffchat.join")){
     							if(isset($args[1])){
     								//Check channel permission
-    								if($sender->hasPermission(strtolower("staffchat.*" . $args[1]))){
+    								if($sender->hasPermission(strtolower("staffchat.channels" . $args[1]))){
     									$status = $this->plugin->joinChannel($sender, $args[1]);
     									if($status == false){
     										$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cChannel not found."));
