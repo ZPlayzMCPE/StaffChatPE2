@@ -1,15 +1,6 @@
 <?php
 
-/*
- * ServerChannels (v1.1) by EvolSoft
- * Developer: EvolSoft (Flavius12)
- * Website: http://www.evolsoft.tk
- * Date: 29/12/2014 09:51 AM (UTC)
- * Copyright & License: (C) 2014 EvolSoft
- * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
- */
-
-namespace ServerChannels\Commands;
+namespace StaffChatPE\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandExecutor;
@@ -19,7 +10,7 @@ use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 
-use ServerChannels\Main;
+use StaffChatPE\Main;
 
 class Commands extends PluginBase implements CommandExecutor{
 
