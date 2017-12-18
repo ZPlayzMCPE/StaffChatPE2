@@ -13,34 +13,34 @@ commands:
    description: StaffChatPE commands.
 permissions:
  staffchat.*:
-  default: op
+  default: false
   description: StaffChatPE permissions.
   children:
    staffchat.channels:
-    default: op
+    default: false
     description: StaffChatPE channels permissions.
    staffchat.commands:
-    default: op
+    default: false
     description: StaffChatPE commands permissions.
     children:
       staffchat.help:
-       default: op
+       default: false
        description: StaffChatPE command Help permission.
       staffchat.info:
-       default: op
+       default: false
        description: StaffChatPE command Info permission.
       staffchat.reload:
-       default: op
+       default: false
        description: StaffChatPE command Reload permission.
       staffchat.list:
-       default: op
+       default: false
        description: StaffChatPE command List permission.
       staffchat.join:
-       default: op
+       default: false
        description: StaffChatPE command Join permission.
       staffchat.leave:
-       default: op
+       default: false
        description: StaffChatPE command Leave permission.
       staffchat.new:
-       default: op
+       default: false
        description: StaffChatPE command New permission.
