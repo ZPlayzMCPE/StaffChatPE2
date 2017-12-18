@@ -1,0 +1,46 @@
+name: StaffChatPE
+main: ServerChannels\Main
+version: "2.0.0"
+api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
+load: STARTUP
+author: VMPE Development Team
+description: Create customized chat channels
+website: https://www.evolsoft.tk
+
+commands:
+ staffchat:
+   aliases: [sc]
+   description: StaffChatPE commands.
+permissions:
+ staffchat.*:
+  default: op
+  description: StaffChatPE permissions.
+  children:
+   staffchat.*:
+    default: op
+    description: StaffChatPE channels permissions.
+   staffchat.commands:
+    default: op
+    description: StaffChatPE commands permissions.
+    children:
+      staffchat.help:
+       default: op
+       description: StaffChatPE command Help permission.
+      staffchat.info:
+       default: op
+       description: StaffChatPE command Info permission.
+      staffchat.reload:
+       default: op
+       description: StaffChatPE command Reload permission.
+      staffchat.list:
+       default: op
+       description: StaffChatPE command List permission.
+      staffchat.join:
+       default: op
+       description: StaffChatPE command Join permission.
+      staffchat.leave:
+       default: op
+       description: StaffChatPE command Leave permission.
+      staffchat.new:
+       default: op
+       description: StaffChatPE command New permission.
