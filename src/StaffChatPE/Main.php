@@ -1,15 +1,6 @@
 <?php
 
-/*
- * ServerChannels (v1.1) by EvolSoft
- * Developer: EvolSoft (Flavius12)
- * Website: http://www.evolsoft.tk
- * Date: 29/12/2014 09:51 AM (UTC)
- * Copyright & License: (C) 2014 EvolSoft
- * Licensed under MIT (https://github.com/EvolSoft/ServerChannels/blob/master/LICENSE)
- */
-
-namespace ServerChannels;
+namespace StaffChatPE;
 
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
@@ -23,12 +14,12 @@ use pocketmine\utils\TextFormat;
 class Main extends PluginBase{
 	
 	//About Plugin Const
-	const PRODUCER = "EvolSoft";
+	const PRODUCER = "VMPE Development Team";
 	const VERSION = "2.0.0";
-	const MAIN_WEBSITE = "http://www.evolsoft.tk";
+	const MAIN_WEBSITE = "Not showing.";
 	//Other Const
 	//Prefix
-	const PREFIX = "&b[&aServer&eChannels&b] ";
+	const PREFIX = "&b[&aStaffChatPE&b] ";
 	
 	public $cfg;
 	
@@ -73,7 +64,7 @@ class Main extends PluginBase{
         $this->saveDefaultConfig();
         $this->cfg = $this->getConfig()->getAll();
         $this->initializeChannelPermissions();
-        $this->getCommand("serverchannels")->setExecutor(new Commands\Commands($this));
+        $this->getCommand("staffchat")->setExecutor(new Commands\Commands($this));
 	    $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     }
     
