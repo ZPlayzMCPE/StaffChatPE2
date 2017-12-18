@@ -1,6 +1,6 @@
-# ServerChannels
+# StaffChatPE
 
-Server chat channels plugin for PocketMine-MP
+StaffChatPE plugin for PocketMine-MP
 
 ## Category
 
@@ -8,22 +8,17 @@ PocketMine-MP plugins
 
 ## Requirements
 
-PocketMine-MP Alpha_1.4 API 1.9.0
+PocketMine-MP Alpha_1.5 API: ALPHA9-ALPHA10
 
 ## Overview
 
-**ServerChannels** allows you to create customized private or public chat channels.
-
-**EvolSoft Website:** http://www.evolsoft.tk
+**StaffChatPE** allows you to chat with staff members on the server.
 
 ***This Plugin uses the New API. You can't install it on old versions of PocketMine.***
 
-With ServerChannels you can create private or public chat channels and you can customize them.<br>
-You can add a prefix and a suffix and you can edit the format (read documentation)
-
 **Commands:**
 
-<dd><i><b>/serverchannels</b> - ServerChannels commands</i></dd>
+<dd><i><b>/staffchatpe</b> - StaffChatPE commands</i></dd>
 <br>
 **To-Do:**
 <br><br>
@@ -63,8 +58,8 @@ Reset ("&r");<br>
 
 *Remember that you must have the "serverchannels.channels.<channel>" permission set to true to join the channel*
 
-1. Run the command "/sch new <channel>"<br>
-2. Go to "ServerChannels/channels" directory and open the channel config file<br>
+1. Run the command "/sc new <channel>"<br>
+2. Go to "StaffChatPE/channels" directory and open the channel config file<br>
 This is a channel config file:
 ```yaml
 ---
@@ -99,24 +94,24 @@ log-on-console: true
 
 **Commands:**
 
-***/serverchannels*** *- ServerChannels commands (aliases: [serverch, sch])*<br>
-***/sch info*** *- Show info about this plugin*<br>
-***/sch help*** *- Show help about this plugin*<br>
-***/sch reload*** *- Reload the config*<br>
-***/sch list*** *- Show the list of all channels*<br>
-***/sch join &lt;channel&gt;*** *- Join a channel*<br>
-***/sch leave*** *- Leave the current channel*<br>
-***/sch new &lt;channel&gt;*** *- Create new channel*<br>
+***/staffchatpe*** *- ServerChannels commands (aliases: [sc])*<br>
+***/sc info*** *- Show info about this plugin*<br>
+***/sc help*** *- Show help about this plugin*<br>
+***/sc reload*** *- Reload the config*<br>
+***/sc list*** *- Show the list of all channels*<br>
+***/sc join &lt;channel&gt;*** *- Join a channel*<br>
+***/sc leave*** *- Leave the current channel*<br>
+***/sc new &lt;channel&gt;*** *- Create new channel*<br>
 <br>
 **Permissions:**
 <br>
-- <dd><i><b>serverchannels.*</b> - ServerChannels permissions.</i></dd>
-- <dd><i><b>serverchannels.channels.*</b> - ServerChannels channels permissions.</i></dd>
-- <dd><i><b>serverchannels.commands.*</b> - ServerChannels commands permissions.</i></dd>
-- <dd><i><b>serverchannels.commands.help</b> - ServerChannels command Help permission.</i></dd>
-- <dd><i><b>serverchannels.commands.info</b> - ServerChannels command Info permission.</i></dd>
-- <dd><i><b>serverchannels.commands.reload</b> - ServerChannels command Reload permission.</i></dd>
-- <dd><i><b>serverchannels.commands.list</b> - ServerChannels command List permission.</i></dd>
-- <dd><i><b>serverchannels.commands.join</b> - ServerChannels command Join permission.</i></dd>
-- <dd><i><b>serverchannels.commands.leave</b> - ServerChannels command Leave permission.</i></dd>
-- <dd><i><b>serverchannels.commands.new</b> - ServerChannels command New permission.</i></dd>
+- <dd><i><b>staffchat.*</b>
+- <dd><i><b>staffchat.*</b> 
+- <dd><i><b>staffchat.*</b>
+- <dd><i><b>staffchat..help</b>  
+- <dd><i><b>staffchat.info</b>  
+- <dd><i><b>staffchat.reload</b> 
+- <dd><i><b>staffchat.list</b>  
+- <dd><i><b>staffchat.join</b>  
+- <dd><i><b>staffchat.leave</b> 
+- <dd><i><b>staffchat.new</b>
