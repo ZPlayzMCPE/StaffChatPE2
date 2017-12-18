@@ -16,7 +16,7 @@ permissions:
   default: op
   description: StaffChatPE permissions.
   children:
-   staffchat.*:
+   staffchat.channels:
     default: op
     description: StaffChatPE channels permissions.
    staffchat.commands:
