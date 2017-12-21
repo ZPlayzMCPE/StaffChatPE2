@@ -26,6 +26,12 @@ permissions:
       staffchat.help:
        default: false
        description: StaffChatPE command Help permission.
+      staffchat.list:
+      default: false
+      description: StaffChatPE command list permission.
+      staffchat.chat:
+      default: false
+      description: Allows you to chat / see chat.
       staffchat.info:
        default: false
        description: StaffChatPE command Info permission.
