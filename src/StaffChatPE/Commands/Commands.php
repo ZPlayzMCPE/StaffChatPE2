@@ -14,6 +14,18 @@ use StaffChatPE\Main;
 
 class Commands extends PluginBase implements CommandExecutor{
 
+  const permChat = 'staffchat.chat';
+  const permRead = 'staffchat.read';
+  const errPerm = TextFormat::RED.'You do not have Permissions';
+  private $console = true;
+  private $prefix = '.';
+  private $format = '';
+  private $pluginFormat;
+  private $consolePrefix;
+  private $chatting = [];
+
+  private $joinMsg = '';
+  private $leaveMsg = '';
 	public function __construct(Main $plugin){
         $this->plugin = $plugin;
     }
