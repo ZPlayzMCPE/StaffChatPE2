@@ -15,7 +15,7 @@ class Main extends PluginBase{
 	
 	//About Plugin Const
 	const PRODUCER = "VMPE Development Team";
-	const VERSION = "2.0.0";
+	const VERSION = "2.0.1";
 	const MAIN_WEBSITE = "Not showing.";
 	//Other Const
 	//Prefix
