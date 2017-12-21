@@ -92,6 +92,7 @@ class Commands extends PluginBase implements CommandExecutor{
     				}elseif($args[0]=="join"){
     					//Check if Sender is a player
     					if($sender instanceof Player){
+					      if(!$sender->hasPermission('staffchat.join')) {
     						$sender->sendMessage(self::errPerm);
                                                 return true;
     							if(isset($args[1])){
@@ -121,7 +122,9 @@ class Commands extends PluginBase implements CommandExecutor{
     				}elseif($args[0]=="leave"){
     				//Check if Sender is a player
     					if($sender instanceof Player){
-    						if($sender->hasPermission("staffchat.leave")){
+    						if(!$sender->hasPermission('staffchat.leave')) {
+                                                  $sender->sendMessage(self::errPerm);
+                                                  return true;
     							$channel = $this->plugin->getPlayerChannel($sender);
     							$status = $this->plugin->leaveChannel($sender);
     							if($status == false){
