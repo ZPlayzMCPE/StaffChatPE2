@@ -52,7 +52,9 @@ class Commands extends PluginBase implements CommandExecutor{
     						break;
     					}
     				}elseif($args[0]=="info"){
-    					if($sender->hasPermission("staffchat.info")){
+    				       if(!$sender->hasPermission('staffchat.info')) {
+                                         $sender->sendMessage(self::errPerm);
+                                         return true;
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eStaffChatPE &bv" . Main::VERSION . " &edeveloped by&b " . Main::PRODUCER));
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eWebsite &b" . Main::MAIN_WEBSITE));
     				        break;
@@ -90,7 +92,8 @@ class Commands extends PluginBase implements CommandExecutor{
     				}elseif($args[0]=="join"){
     					//Check if Sender is a player
     					if($sender instanceof Player){
-    						if($sender->hasPermission("staffchat.join")){
+    						$sender->sendMessage(self::errPerm);
+                                                return true;
     							if(isset($args[1])){
     								//Check channel permission
     								if($sender->hasPermission(strtolower("staffchat.channels." . $args[1]))){
