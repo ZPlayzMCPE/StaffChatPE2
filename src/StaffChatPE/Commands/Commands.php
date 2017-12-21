@@ -33,7 +33,8 @@ class Commands extends PluginBase implements CommandExecutor{
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
     	$fcmd = strtolower($cmd->getName());
     	switch($fcmd){
-    		case "staffchat":
+    		if($args[0]=="staffchat"){
+        if(!$sender->hasPermission('staffchat.*')) {
     			if(isset($args[0])){
     				$args[0] = strtolower($args[0]);
     				if($args[0]=="help"){
