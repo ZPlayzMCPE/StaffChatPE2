@@ -14,18 +14,6 @@ use StaffChatPE\Main;
 
 class Commands extends PluginBase implements CommandExecutor{
 
-  const permChat = 'staffchat.chat';
-  const permRead = 'staffchat.read';
-  const errPerm = TextFormat::RED.'You do not have Permissions';
-  private $console = true;
-  private $prefix = '.';
-  private $format = '';
-  private $pluginFormat;
-  private $consolePrefix;
-  private $chatting = [];
-
-  private $joinMsg = '';
-  private $leaveMsg = '';
 	public function __construct(Main $plugin){
         $this->plugin = $plugin;
     }
@@ -33,7 +21,7 @@ class Commands extends PluginBase implements CommandExecutor{
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
     	$fcmd = strtolower($cmd->getName());
     	switch($fcmd){
-	    case "staffchat":
+    		case "staffchat":
     			if(isset($args[0])){
     				$args[0] = strtolower($args[0]);
     				if($args[0]=="help"){
@@ -51,9 +39,7 @@ class Commands extends PluginBase implements CommandExecutor{
     						break;
     					}
     				}elseif($args[0]=="info"){
-    				       if(!$sender->hasPermission('staffchat.info')) {
-                                         $sender->sendMessage(self::errPerm);
-                                         return true;
+    					if($sender->hasPermission("staffchat.info")){
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eStaffChatPE &bv" . Main::VERSION . " &edeveloped by&b " . Main::PRODUCER));
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eWebsite &b" . Main::MAIN_WEBSITE));
     				        break;
@@ -91,9 +77,7 @@ class Commands extends PluginBase implements CommandExecutor{
     				}elseif($args[0]=="join"){
     					//Check if Sender is a player
     					if($sender instanceof Player){
-					      if(!$sender->hasPermission('staffchat.join')) {
-    						$sender->sendMessage(self::errPerm);
-                                                return true;
+    						if($sender->hasPermission("staffchat.join")){
     							if(isset($args[1])){
     								//Check channel permission
     								if($sender->hasPermission(strtolower("staffchat.channels." . $args[1]))){
@@ -121,9 +105,7 @@ class Commands extends PluginBase implements CommandExecutor{
     				}elseif($args[0]=="leave"){
     				//Check if Sender is a player
     					if($sender instanceof Player){
-    						if(!$sender->hasPermission('staffchat.leave')) {
-                                                  $sender->sendMessage(self::errPerm);
-                                                  return true;
+    						if($sender->hasPermission("staffchat.leave")){
     							$channel = $this->plugin->getPlayerChannel($sender);
     							$status = $this->plugin->leaveChannel($sender);
     							if($status == false){
