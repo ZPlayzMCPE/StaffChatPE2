@@ -104,11 +104,14 @@ class Commands extends PluginBase implements CommandExecutor{
     									$status = $this->plugin->joinChannel($sender, $args[1]);
     									if($status == false){
     										$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cChannel not found."));
+										return true;
     									}else{
     										$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&aYou joined &b" . strtolower($args[1]) . "&a channel"));
+										return true;
     									}
     								}else{
     									$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cYou don't have permissions to join in this channel"));
+									return true;
     								}
     							}else{
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cUsage: /sc join <channel>"));
@@ -133,8 +136,10 @@ class Commands extends PluginBase implements CommandExecutor{
     							$status = $this->plugin->leaveChannel($sender);
     							if($status == false){
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cYou haven't joined on a channel"));
+								return true;
     							}else{
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&aYou left &b" . $channel . "&a channel"));
+								return true;
     							}
     						}else{
     							$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
