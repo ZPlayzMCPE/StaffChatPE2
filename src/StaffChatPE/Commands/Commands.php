@@ -30,31 +30,35 @@ class Commands extends PluginBase implements CommandExecutor{
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc info &b>>&e Show info about this plugin"));
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc help &b>>&e Show help about this plugin"));
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc reload &b>>&e Reload the config"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc list &b>>&e Show the list of all channels"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc join &b>>&e Join a channel"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc leave &b>>&e Leave the current channel"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc new &b>>&e Create new channel"));
+    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc join staff &b>>&e Join the StaffChat."));
+    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc leave &b>>&e Leave the StaffChat."));
+						return true;
     						break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="info"){
     					if($sender->hasPermission("staffchat.info")){
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eStaffChatPE &bv" . Main::VERSION . " &edeveloped by&b " . Main::PRODUCER));
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&eWebsite &b" . Main::MAIN_WEBSITE));
+					return true;
     				        break;
     					}else{
-    						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    						$sender->sendMessage($this->plugin->translateColors("&", "&5You don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="reload"){
     					if($sender->hasPermission("staffchat.reload")){
     						$this->plugin->reloadConfig();
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&aConfiguration Reloaded."));
+					return true;
     				        break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="new"){
@@ -66,9 +70,11 @@ class Commands extends PluginBase implements CommandExecutor{
     						}else{
     							$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cUsage: /sch new <channel>"));
     						}
+						return true;
     						break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="list"){
@@ -81,9 +87,11 @@ class Commands extends PluginBase implements CommandExecutor{
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&b- &a" . $list[$i]));
     							}
     						}
+						return true;
     						break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="join"){
@@ -105,13 +113,16 @@ class Commands extends PluginBase implements CommandExecutor{
     							}else{
     								$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX  . "&cUsage: /sc join <channel>"));
     							}
+							return true;
     							break;
     						}else{
-    							$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+    							$sender->sendMessage($this->plugin->translateColors("&", "&5You don't have permissions to use this command"));
+							return true;
     							break;
     						}
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&cYou can only perform this command as a player"));
+						return true;
     						break;
     					}
     				}elseif($args[0]=="leave"){
@@ -127,18 +138,22 @@ class Commands extends PluginBase implements CommandExecutor{
     							}
     						}else{
     							$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+							return true;
     							break;
     						}
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", Main::PREFIX . "&cYou can only perform this command as a player"));
+						return true;
     						break;
     					}
     				}else{
     					if($sender->hasPermission("staffchat.*")){
     						$sender->sendMessage($this->plugin->translateColors("&",  Main::PREFIX . "&cSubcommand &a" . $args[0] . " &cnot found. Use &a/sc help &cto show available commands"));
+						return true;
     						break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}
@@ -148,13 +163,13 @@ class Commands extends PluginBase implements CommandExecutor{
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc info &b>>&e Show info about this plugin"));
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc help &b>>&e Show help about this plugin"));
     						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc reload &b>>&e Reload the config"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc list &b>>&e Show the list of all channels"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc join &b>>&e Join a channel"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc leave &b>>&e Leave the current channel"));
-    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc new &b>>&e Create new channel"));
+    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc join staff &b>>&e Join the StaffChat"));
+    						$sender->sendMessage($this->plugin->translateColors("&", "&a/sc leave &b>>&e Leave the StaffChat."));
+    						return true;
     						break;
     					}else{
     						$sender->sendMessage($this->plugin->translateColors("&", "&cYou don't have permissions to use this command"));
+						return true;
     						break;
     					}
     				}
